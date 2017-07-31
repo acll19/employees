@@ -27,5 +27,6 @@ public class CustomerServiceTest {
         List<Customer> customers = customerService.listCostomers();
 
         customers.forEach(c -> assertThat(c.getName()).isNotNull());
+        customers.forEach(c -> assertThat(c.getName()).isNotEmpty());
     }
 }
