@@ -66,13 +66,11 @@
             <groupId>org.wildfly.swarm</groupId>
             <artifactId>cdi</artifactId>
             <version>${version.wildfly-swarm}</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
             <artifactId>jaxrs-multipart</artifactId>
             <version>${version.wildfly-swarm}</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
