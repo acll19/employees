@@ -1,7 +1,7 @@
 package org.aca.studies.infra.boundary;
 
 import org.aca.studies.domain.Customer;
-import org.aca.studies.services.CustomerService;
+import org.aca.studies.domain.services.CustomerService;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

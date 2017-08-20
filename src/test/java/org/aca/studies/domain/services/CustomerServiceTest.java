@@ -1,4 +1,4 @@
-package org.aca.studies.services;
+package org.aca.studies.domain.services;
 
 
 import org.aca.studies.domain.Customer;
