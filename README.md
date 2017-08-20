@@ -1,2 +1,2 @@
-# payroll
-Simple payroll system with microservices and wildfly-swarm
+# employees
+Simple employees system with microservices and wildfly-swarm
