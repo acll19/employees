@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="payroll:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="swarm-1.0.war">
-      <element id="artifact" artifact-name="payroll:war exploded" />
-    </root>
-  </artifact>
-</component>
