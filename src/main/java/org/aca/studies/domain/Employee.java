@@ -1,14 +1,14 @@
 package org.aca.studies.domain;
 
 
-public class Customer {
+public class Employee {
 
     private String name;
 
-    public Customer() {
+    public Employee() {
     }
 
-    Customer(String name) {
+    Employee(String name) {
         this.name = name;
     }
 
@@ -19,8 +19,8 @@ public class Customer {
     public static class Builder {
         private String name;
 
-        public Customer build() {
-            return new Customer(name);
+        public Employee build() {
+            return new Employee(name);
         }
 
         public Builder withName(String name) {
