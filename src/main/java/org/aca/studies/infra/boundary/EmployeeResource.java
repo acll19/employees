@@ -10,7 +10,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
-@Path("/Employees")
+@Path("/employees")
 public class EmployeeResource {
 
     @GET
