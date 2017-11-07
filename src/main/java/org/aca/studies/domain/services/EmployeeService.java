@@ -7,7 +7,7 @@ import java.util.List;
 
 public class EmployeeService {
 
-    public List<Employee> listCostomers() {
+    public List<Employee> listEmployees() {
         return Arrays.asList(
                 new Employee.Builder()
                 .withName("Employee A")

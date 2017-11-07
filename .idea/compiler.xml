@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="employees" />
         <module name="payroll" />
         <module name="swarm" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="employees" target="1.8" />
       <module name="payroll" target="1.8" />
       <module name="swarm" target="1.8" />
     </bytecodeTargetLevel>

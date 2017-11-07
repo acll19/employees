@@ -17,7 +17,7 @@ public class EmployeeResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response obtenerEmployees() {
         EmployeeService employeeService = new EmployeeService();
-        List<Employee> employees = employeeService.listCostomers();
+        List<Employee> employees = employeeService.listEmployees();
         return Response.ok(employees).build();
     }
 }

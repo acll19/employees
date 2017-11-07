@@ -15,7 +15,7 @@ public class EmployeeServiceTest {
     public void shouldReturnListWithEmployees() {
         EmployeeService employeeService = new EmployeeService();
 
-        List<Employee> Employees = employeeService.listCostomers();
+        List<Employee> Employees = employeeService.listEmployees();
 
         assertThat(Employees).isNotEmpty();
     }
@@ -24,7 +24,7 @@ public class EmployeeServiceTest {
     public void shouldREturnListWithEmployeesWithNames() throws Exception {
         EmployeeService employeeService = new EmployeeService();
 
-        List<Employee> Employees = employeeService.listCostomers();
+        List<Employee> Employees = employeeService.listEmployees();
 
         Employees.forEach(c -> assertThat(c.getName()).isNotNull());
         Employees.forEach(c -> assertThat(c.getName()).isNotEmpty());
