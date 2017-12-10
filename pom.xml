@@ -24,15 +24,16 @@
                 <version>${version.wildfly-swarm}</version>
                 <executions>
                     <execution>
+                        <id>package</id>
                         <goals>
                             <goal>package</goal>
                         </goals>
                     </execution>
                     <execution>
-                        <id>start</id>
-                    </execution>
-                    <execution>
-                        <id>stop</id>
+                        <id>run</id>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
@@ -59,9 +60,13 @@
     <dependencies>
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
-            <artifactId>jaxrs</artifactId>
+            <artifactId>monitor</artifactId>
             <version>${version.wildfly-swarm}</version>
-            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.wildfly.swarm</groupId>
+            <artifactId>jaxrs-jsonp</artifactId>
+            <version>${version.wildfly-swarm}</version>
         </dependency>
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
@@ -71,13 +76,18 @@
         </dependency>
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
-            <artifactId>cdi</artifactId>
+            <artifactId>jpa</artifactId>
             <version>${version.wildfly-swarm}</version>
         </dependency>
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
-            <artifactId>monitor</artifactId>
+            <artifactId>cdi</artifactId>
             <version>${version.wildfly-swarm}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.4</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
