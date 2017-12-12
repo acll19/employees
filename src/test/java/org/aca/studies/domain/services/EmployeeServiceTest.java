@@ -21,12 +21,13 @@ public class EmployeeServiceTest {
     }
 
     @Test
-    public void shouldREturnListWithEmployeesWithNames() throws Exception {
+    public void shouldReturnListWithEmployeesWithNamesAndSallary() throws Exception {
         EmployeeService employeeService = new EmployeeService();
 
         List<Employee> Employees = employeeService.listEmployees();
 
         Employees.forEach(c -> assertThat(c.getName()).isNotNull());
         Employees.forEach(c -> assertThat(c.getName()).isNotEmpty());
+        Employees.forEach(c -> assertThat(c.getSallary()).isNotNull());
     }
 }
