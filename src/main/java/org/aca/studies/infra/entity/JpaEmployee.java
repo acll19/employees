@@ -40,6 +40,20 @@ public class JpaEmployee {
         this.name = name;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        JpaEmployee that = (JpaEmployee) o;
+        return Objects.equals(getId(), that.getId());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(getId());
+    }
+
     public static class Builder {
 
         private String name;
@@ -58,19 +72,5 @@ public class JpaEmployee {
         public JpaEmployee build() {
             return new JpaEmployee(name, sallary);
         }
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        JpaEmployee that = (JpaEmployee) o;
-        return Objects.equals(getId(), that.getId());
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(getId());
     }
 }
