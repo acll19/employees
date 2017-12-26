@@ -3,7 +3,7 @@ swarm:
     data-sources:
       MySqlDS:
         driver-name: mysql
-        connection-url: jdbc:mysql://db_em:3306/employees_db?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        connection-url: jdbc:mysql://localhost:3306/employees_db?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
         user-name: db_root
         password: 'Homie*Arming64'
   j-p-a:

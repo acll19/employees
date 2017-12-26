@@ -1,14 +1,16 @@
 package org.aca.studies.domain.services;
 
 
+import org.aca.studies.UnitTest;
 import org.aca.studies.domain.Employee;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
-
+@Category(UnitTest.class)
 public class EmployeeServiceTest {
 
     @Test
