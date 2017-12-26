@@ -19,14 +19,12 @@ import javax.sql.DataSource;
 import java.math.BigDecimal;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 @Category(IntegrationTest.class)
 @RunWith(Arquillian.class)
 @DefaultDeployment(type = DefaultDeployment.Type.JAR)
-public class SampleIntegrationTest {
+public class EmployeeFacadeIT {
 
     private String employeeName;
     private double employeeSalary;
