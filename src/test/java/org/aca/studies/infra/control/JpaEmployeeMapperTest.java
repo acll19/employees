@@ -1,7 +1,7 @@
 package org.aca.studies.infra.control;
 
 import org.aca.studies.UnitTest;
-import org.aca.studies.domain.Employee;
+import org.aca.studies.domain.entity.Employee;
 import org.aca.studies.infra.entity.JpaEmployee;
 import org.junit.Before;
 import org.junit.Test;

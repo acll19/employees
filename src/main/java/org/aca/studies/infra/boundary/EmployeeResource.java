@@ -1,6 +1,6 @@
 package org.aca.studies.infra.boundary;
 
-import org.aca.studies.domain.Employee;
+import org.aca.studies.domain.entity.Employee;
 import org.aca.studies.domain.services.EmployeeService;
 
 import javax.ws.rs.GET;

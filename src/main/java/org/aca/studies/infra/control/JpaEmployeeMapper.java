@@ -1,6 +1,6 @@
 package org.aca.studies.infra.control;
 
-import org.aca.studies.domain.Employee;
+import org.aca.studies.domain.entity.Employee;
 import org.aca.studies.infra.entity.JpaEmployee;
 
 class JpaEmployeeMapper {
