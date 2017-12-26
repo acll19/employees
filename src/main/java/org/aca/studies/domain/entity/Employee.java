@@ -13,6 +13,8 @@ public class Employee {
         this.sallary = sallary;
     }
 
+    protected Employee(){}
+
     public String getName() {
         return name;
     }
