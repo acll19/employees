@@ -1,41 +1,41 @@
 package org.aca.studies.infra.boundary;
 
 import org.aca.studies.domain.entity.Employee;
-import org.aca.studies.infra.control.EmployeeManager;
 
-import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import java.net.URI;
-import java.util.List;
+import java.math.BigDecimal;
 
-@Path("/employees")
 public class EmployeeResource {
 
-    private EmployeeManager employeeManager;
-
-    @Inject
-    public EmployeeResource(EmployeeManager employeeManager) {
-        this.employeeManager = employeeManager;
-    }
+    private String name;
+    private BigDecimal salary;
 
     public EmployeeResource() {
     }
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response obtenerEmployees() {
-        List<Employee> employees = employeeManager.report();
-        return Response.ok(employees).build();
+    public BigDecimal getSalary() {
+        return salary;
     }
 
-    @POST
-    public Response recruitEmployee(Employee employee) {
-        Long newEmployeeId = employeeManager.recruit(employee);
-        return Response.created(URI.create("/" + newEmployeeId)).build();
+    public void setSalary(BigDecimal salary) {
+        this.salary = salary;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public static EmployeeResource toResource(Employee employee) {
+        EmployeeResource employeeResource = new EmployeeResource();
+        employeeResource.setName(employee.getName());
+        employeeResource.setSalary(employee.getSallary());
+        return employeeResource;
+    }
+
+    public static Employee toEmployee(EmployeeResource employeeResource) {
+        return new Employee(employeeResource.getName(), employeeResource.getSalary());
     }
 }

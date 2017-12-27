@@ -22,15 +22,15 @@ import static org.mockito.Mockito.when;
 
 @Category(UnitTest.class)
 @RunWith(MockitoJUnitRunner.class)
-public class EmployeeResourceTest {
+public class EmployeeEndpointTest {
 
     @Mock
     private EmployeeManager employeeManager;
-    private EmployeeResource employeeResource;
+    private EmployeeEndpoint employeeEndpoint;
 
     @Before
     public void setUp() {
-        employeeResource = new EmployeeResource(employeeManager);
+        employeeEndpoint = new EmployeeEndpoint(employeeManager);
     }
 
     @Test
@@ -41,22 +41,26 @@ public class EmployeeResourceTest {
         );
         when(employeeManager.report()).thenReturn(employees);
 
-        Response response = employeeResource.obtenerEmployees();
-        List<Employee> employeesResponse = (List<Employee>) response.getEntity();
+        Response response = employeeEndpoint.fetchEmployees();
+        List<EmployeeResource> employeesResponse = (List<EmployeeResource>) response.getEntity();
 
         verify(employeeManager).report();
         assertThat(employeesResponse).isNotEmpty();
+        employeesResponse.forEach(em -> assertThat(em).isInstanceOf(EmployeeResource.class));
     }
 
     @Test
     public void recruitEmployeeShouldCallRecruitOnEmployeeManager() {
         String name = "Armando";
         BigDecimal salary = BigDecimal.valueOf(1500.0);
-        Employee employee = new Employee(name, salary);
 
-        when(employeeManager.recruit(employee)).thenReturn(1L);
+        EmployeeResource employeeResource = new EmployeeResource();
+        employeeResource.setName(name);
+        employeeResource.setSalary(salary);
 
-        Response response = employeeResource.recruitEmployee(employee);
+        when(employeeManager.recruit(any(Employee.class))).thenReturn(1L);
+
+        Response response = employeeEndpoint.recruitEmployee(employeeResource);
 
         verify(employeeManager).recruit(any(Employee.class));
         assertThat(response.getStatus()).isEqualTo(201);
