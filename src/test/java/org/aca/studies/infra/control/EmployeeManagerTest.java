@@ -31,7 +31,9 @@ public class EmployeeManagerTest {
 
     @Before
     public void setUp() {
-        employeeManager = new EmployeeManager(jpaEmployeeFacade);
+        employeeManager = new EmployeeManager();
+        employeeManager.setJpaEmployeeFacade(jpaEmployeeFacade);
+        employeeManager.init();
     }
 
     @Test

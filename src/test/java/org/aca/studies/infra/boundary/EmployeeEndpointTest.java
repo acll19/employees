@@ -30,7 +30,8 @@ public class EmployeeEndpointTest {
 
     @Before
     public void setUp() {
-        employeeEndpoint = new EmployeeEndpoint(employeeManager);
+        employeeEndpoint = new EmployeeEndpoint();
+        employeeEndpoint.setEmployeeManager(employeeManager);
     }
 
     @Test

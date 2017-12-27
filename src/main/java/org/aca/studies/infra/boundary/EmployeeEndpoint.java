@@ -20,11 +20,8 @@ public class EmployeeEndpoint {
     private EmployeeManager employeeManager;
 
     @Inject
-    public EmployeeEndpoint(EmployeeManager employeeManager) {
+    public void setEmployeeManager(EmployeeManager employeeManager) {
         this.employeeManager = employeeManager;
-    }
-
-    public EmployeeEndpoint() {
     }
 
     @GET

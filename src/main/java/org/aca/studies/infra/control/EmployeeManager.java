@@ -3,6 +3,7 @@ package org.aca.studies.infra.control;
 import org.aca.studies.domain.entity.Employee;
 import org.aca.studies.infra.entity.JpaEmployee;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import java.util.List;
@@ -16,12 +17,13 @@ public class EmployeeManager {
     private JpaEmployeeFacade jpaEmployeeFacade;
 
     @Inject
-    EmployeeManager(JpaEmployeeFacade jpaEmployeeFacade) {
-        this.jpaEmployeeMapper = new JpaEmployeeMapper();
+    void setJpaEmployeeFacade(JpaEmployeeFacade jpaEmployeeFacade) {
         this.jpaEmployeeFacade = jpaEmployeeFacade;
     }
 
-    protected EmployeeManager() {
+    @PostConstruct
+    protected void init() {
+        this.jpaEmployeeMapper = new JpaEmployeeMapper();
     }
 
     public Long recruit(Employee employee) {
